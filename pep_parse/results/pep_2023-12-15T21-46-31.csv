@@ -1,0 +1,11 @@
+number,name,status
+1,PEP Purpose and Guidelines,Active
+3,Guidelines for Handling Bug Reports,Withdrawn
+7,Style Guide for C Code,Active
+9,Sample Plaintext PEP Template,Withdrawn
+4,Deprecation of Standard Modules,Active
+10,Voting Guidelines,Active
+5,Guidelines for Language Evolution,Superseded
+8,Style Guide for Python Code,Active
+6,Bug Fix Releases,Superseded
+2,Procedure for Adding New Modules,Active
