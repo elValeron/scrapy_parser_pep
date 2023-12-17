@@ -9,4 +9,9 @@ ENGINE_PATH = 'sqlite:///sqlite.db'
 STATUS_SUMMARY = 'status_summary_{time}.csv'
 PEP_INFO = 'pep_%(time)s.csv'
 
+"""FORMAT"""
 DATETIME_FORMAT = '%Y-%m-%d_%H-%M-%S'
+
+"""URLS"""
+START_URL = ['https://peps.python.org/']
+ALLOWED_DOMAINS = ['peps.python.org']
