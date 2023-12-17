@@ -1,7 +1,12 @@
-import datetime as dt
 from pathlib import Path
 
-BASE_DIR = Path(__file__).parent
-RESULTS_DIR = BASE_DIR / 'results'
+"""PATH"""
+BASE_DIR = Path(__file__).parent.parent
+RESULTS_DIR = 'results'
+ENGINE_PATH = 'sqlite:///sqlite.db'
+
+"""FILENAMES"""
+STATUS_SUMMARY = 'status_summary_{time}.csv'
 PEP_INFO = 'pep_%(time)s.csv'
-STATUS_SUMMARY = RESULTS_DIR / 'status_summary_{time}.csv'.format(time=dt.datetime.now())
+
+DATETIME_FORMAT = '%Y-%m-%d_%H-%M-%S'

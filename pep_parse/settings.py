@@ -1,4 +1,6 @@
-from pep_parse.constants import BASE_DIR, RESULTS_DIR, PEP_INFO
+import os
+
+from pep_parse.constants import RESULTS_DIR, PEP_INFO
 
 BOT_NAME = 'pep_parse'
 
@@ -9,7 +11,7 @@ NEWSPIDER_MODULE = 'pep_parse.spiders'
 ROBOTSTXT_OBEY = True
 
 FEEDS = {
-    RESULTS_DIR / PEP_INFO : {
+    os.path.join(RESULTS_DIR, PEP_INFO): {
         'format': 'csv',
         'fields': ['number', 'name', 'status'],
         'overwrite': True

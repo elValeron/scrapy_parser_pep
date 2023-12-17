@@ -1,8 +1,9 @@
-import re 
+import re
 
 import scrapy
 
 from pep_parse.items import PepParseItem
+
 
 class PepSpider(scrapy.Spider):
     name = 'pep'
@@ -11,19 +12,17 @@ class PepSpider(scrapy.Spider):
 
     def parse(self, response):
         pep_all = response.css('#numerical-index tbody a')
-        count = 0
         for pep in pep_all:
-            count += 1
             yield response.follow(pep, callback=self.parse_pep)
-            if count == 20:
-                break
 
     def parse_pep(self, response):
-        number_name = response.css('article h1.page-title::text').get().strip()
+        number_name = response.xpath(
+            '//article//h1[@class="page-title"]//text()'
+        ).getall()
         pattern = r'PEP\s(?P<number>(\d+)) – (?P<name>(.+))'
-        string = re.search(pattern=pattern, string=number_name)
+        string = re.search(pattern=pattern, string=''.join(number_name))
         yield PepParseItem(
-            number=int(string.group(1)),
-            name=string.group(3),
+            number=int(string.group('number')),
+            name=string.group('name'),
             status=response.css('abbr::text').get()
         )
