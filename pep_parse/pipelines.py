@@ -10,10 +10,10 @@ from pep_parse.settings import (BASE_DIR,
 
 class PepParsePipeline:
     def __init__(
-            self,
-            statuses=defaultdict(int),
-            statistic={}
-            ):
+        self,
+        statuses=defaultdict(int),
+        statistic={}
+    ):
         self.statuses = statuses
         self.statistic = statistic
 
