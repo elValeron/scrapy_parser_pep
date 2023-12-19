@@ -17,6 +17,9 @@ class PepParsePipeline:
         self.statuses = statuses
         self.statistic = statistic
 
+    def open_spider(self, spider):
+        pass
+
     def process_item(self, item, spider):
         self.pep_information = {
             'number': item['number'],
