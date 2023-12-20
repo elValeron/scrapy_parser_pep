@@ -1,5 +1,3 @@
-import os
-
 from pathlib import Path
 
 """PATH"""
@@ -26,7 +24,7 @@ SPIDER_MODULES = NEWSPIDER_MODULE.split(',')
 ROBOTSTXT_OBEY = True
 
 FEEDS = {
-    os.path.join(RESULTS_DIR, PEP_INFO): {
+    f'{RESULTS_DIR}/{PEP_INFO}': {
         'format': 'csv',
         'fields': ['number', 'name', 'status'],
         'overwrite': True
