@@ -28,7 +28,7 @@ class PepParsePipeline:
         self.statuses['Total'] = sum(self.statuses.values())
         field_names = ['status', 'count']
         with open(
-            self.results_dir/STATUS_SUMMARY.format(
+            self.results_dir / STATUS_SUMMARY.format(
                 time=dt.datetime.now().strftime(DATETIME_FORMAT)
             ),
             'w',
